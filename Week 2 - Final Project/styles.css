@@ -744,7 +744,7 @@ input:focus {
 .pricing__sub-title {
     color: rgb(36, 62, 99);
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .pricing__para {
@@ -760,31 +760,74 @@ input:focus {
 
 .pricing__plan--container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.pricing__plan1of3 {
+.pricing__plan1of3{
+    width: 30%;
+}
+
+.style1 {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
     max-width: 384px;
     margin: 64px 32px 0 0;
     padding: 8px 32px 0 32px;
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    border-top: none;
     border-bottom: solid;
     border-bottom-color: rgb(229, 231, 235);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    /* box-shadow: 0 8px 16px rgb(0 0 0 / 16%); */
+}
+
+.style2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 384px;
+    margin: 64px 32px 0 0;
+    padding: 8px 32px 0 32px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    border-bottom: solid;
+    border-bottom-color: rgb(229, 231, 235);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-image: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+    /* box-shadow: 0 8px 16px rgb(0 0 0 / 16%); */
 }
 
 .pricing__plan--header-top {
     border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    position: absolute;
+    border-top-right-radius: 8px;    
     height: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     color: rgb(26, 32, 44);
-    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%)
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.pricing__plan--header-top3 {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;    
+    height: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: rgb(26, 32, 44);
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
 }
 
 .pricing__plan--header {
@@ -796,12 +839,36 @@ input:focus {
     line-height: 26px;  
 }
 
+.pricing__plan--header2 {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: rgb(247, 250, 252);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    line-height: 26px;  
+}
+.color1 {
+    color: rgb(26, 32, 44);
+}
+
+.color2 {
+    color: rgb(247, 250, 252);  
+}
+
+.duration__color1 {
+    color: rgb(160, 174, 192);
+}
+
+.duration__color2 {
+    color: rgb(237, 242, 247);
+}
+
 .name{
     font-size: 20px;
     font-weight: 700;
     line-height: 32.5px;
     text-align: center;
-    color: rgb(26, 32, 44);    
 }
 
 .price {
@@ -810,7 +877,6 @@ input:focus {
     line-height: 78px;
     text-align: center;
     margin: 4px 0;
-    color: rgb(26, 32, 44);
 }
 
 .duration {
@@ -818,27 +884,48 @@ input:focus {
     line-height: 26px;
     letter-spacing: 1.6px;
     text-align: center;
-    color: rgb(160, 174, 192);
 }
 
 .pricing__plan--body {
     display: flex;
     flex-direction: column;
     padding: 32px;
-    border-color: rgb(229, 231, 235);
     border-width: 2px 0;
     margin: 0 -32px;
+}
+
+.plan--body-border1 {
+    border-color: rgb(229, 231, 235);
+}
+
+.plan--body-border2 {
+    border-color: rgb(102, 126, 234);
 }
 
 .feature-main {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+.feature-main__color1{
     color: rgb(26, 32, 44);
+}
+
+.feature-main__color2{
+    color: rgb(247, 250, 252);
 }
 
 .feature:first-child{
     margin-top: 0px;
+}
+
+.feature__color1{
+    color: rgb(113, 128, 150);
+}
+
+.feature__color2{
+    color: rgb(226, 232, 240);
 }
 
 .feature {
@@ -846,7 +933,6 @@ input:focus {
     height: 24px;
     margin-top: 20px;
     text-align: center;
-    color: rgb(113, 128, 150);
 }
 
 .pricing__plan--footer {
@@ -856,11 +942,32 @@ input:focus {
 
 .buy__btn {
     width: 192px;
-    color: rgb(247, 250, 252);
-    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
     border: none;
     border-radius: 40px;
     padding: 16px 32px;
     font-weight: 700;
     font-size: 16px;
+    text-transform: uppercase;
+    transition: all 600ms ease;
+}
+
+.buy__btn:hover {
+    transform: translateX(2px) translateY(-2px);
+    box-shadow: 0 8px 16px rgb(0 0 0 / 16%);
+    cursor: pointer;
+}
+
+.btn1 {
+    color: rgb(247, 250, 252);
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.btn2 {
+    color: rgb(100,21,255);
+    background: rgb(247,250,252);
+}
+
+.btn3 {
+    color: rgb(247, 250, 252);
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
 }
